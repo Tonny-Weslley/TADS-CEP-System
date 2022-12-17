@@ -1,0 +1,15 @@
+-> cpf_isCompleto (variavel)
+--> Verifica se o CEP está completo
+
+-> resetFormInputs (Função)
+--> Remover mensagens de erro
+
+-> handleCEP (Função)
+--> Verificar de o CEP está completo
+---> Caso completo
+----> Buscar na API as informações necessárias
+----> Desabilitar CEP input
+----> Desabilitar Campos que possuem retorno da api
+
+->resetForm (função)
+--> chama reset input

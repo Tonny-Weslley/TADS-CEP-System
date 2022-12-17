@@ -1,15 +1,13 @@
-let cep_isCompleto = false;
 
 function handleCEP(){
     let cep = document.getElementById('cep').value;
     if(cep.length == 8){
         document.getElementById('cep').disabled = true;
-        cep_isCompleto = true;
         preencherCampos();
-    }else{
-        cep_isCompleto = false;
     }
 }
+
+  
 
 //get cep api
 async function getCep() {
@@ -47,14 +45,23 @@ function preencherCampos(){
             estado.value = data.uf;
             estado.disabled = true;
         }
+        if(data.erro == true){
+            cpfError();
+        }
     });
 }
 
 function resetForm(){
+    document.getElementById('resetButton').click();
+    document.getElementById('cpf_error_bag').classList.replace('d-block', 'd-none');
     document.getElementById('cep').disabled = false;
     document.getElementById('logradouro').disabled = false;
     document.getElementById('complemento').disabled = false;
     document.getElementById('bairro').disabled = false;
     document.getElementById('cidade').disabled = false;
     document.getElementById('estado').disabled = false;
+}
+
+function cpfError(){
+    document.getElementById('cpf_error_bag').classList.replace('d-none', 'd-block');
 }

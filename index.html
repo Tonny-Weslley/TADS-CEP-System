@@ -18,9 +18,9 @@
                 <!-- CEP Input -->
                 <div class="mb-4">
                     <label for="cep" class="mb-2">CEP</label>
-                    <input type="text" id="cep" class="form-control form-control-lg" onkeyup="handleCEP()">
-                    <div class="cpf_error_bag d-none">
-                        <p class="text-danger">CEP não encontrado</p>
+                    <input type="number" id="cep" class="form-control form-control-lg" onkeyup="handleCEP()">
+                    <div class="d-none" id="cpf_error_bag">
+                        <p class="text-danger">Localização não existe</p>
                     </div>
                 </div>
                 <!-- Logradouro Input -->
@@ -52,7 +52,8 @@
             <!-- Buttons -->
             <div>
                 <button type="submit" class="btn btn-lg btn-primary px-4" disabled>Enviar</button>
-                <button type="reset" class="btn btn-lg btn-warning px-4" onclick="resetForm()">Limpar Campo</button>
+                <button type="reset" class="btn btn-lg btn-warning px-4" id="resetButton" onclick="resetForm()">Limpar
+                    Campo</button>
             </div>
         </form>
     </header>
